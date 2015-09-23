@@ -112,7 +112,7 @@
 
                                        <div class="row"> 
                                         <div class="span12 padding-top align-justify"> 
-                                                O login e a senha são enviados para o e-mail informado na confirmação da matrícula da disciplina de TGSI. Obs: Caso não tenha recebido esse e-mail na caixa de entrada, verifique a caixa de spam, ou entre em contato com o professor coordenador. 
+                                                A matrícula e a senha são enviados para o e-mail informado na confirmação da matrícula da disciplina de TGSI. Obs: Caso não tenha recebido esse e-mail na caixa de entrada, verifique a caixa de spam, ou entre em contato com o professor coordenador. 
                                         </div> 
                                     </div> 
                                 </div> 
