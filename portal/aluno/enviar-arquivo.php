@@ -4,20 +4,30 @@
     include("../navbar.php");
     include("navbar_aluno.php");
 ?>
-
+  
     <!-- main -->
     <div class="band">
         <div class="container">
             <h2 class="primary stroked-bottom text-shadowed margin-bottom "> Envio de arquivo para orientador</h2>
-            <form id="formArquivo" action="recebe_arquivo.php" method="post" enctype="multipart/form-data">
+            <form name=fInsereArquivo" enctype="multipart/form-data" id="fInsereArquivo" action="recebe_arquivo.php" method="post" > <!--Monta formulário com campos do arquivo-->
                 <div class="row"> 
                     <div class="span12"> <span class="label">Observações</span><br>
                          <div class="row">
-                             <textarea id="justificativa" name="justificativa" class="textarea" rows="5"></textarea>
+                             
+                                 <SCRIPT LANGUAGE="JavaScript">
+                                <!-- 
+                                function textCounter(field, countfield, maxlimit) {
+                                if (field.value.length > maxlimit)
+                                field.value = field.value.substring(0, maxlimit);
+                                else 
+                                countfield.value = maxlimit - field.value.length;
+                                }
+                                // -->
+                                </script>                                                              
+                           
+                                <textarea  name="obs" class="textarea" rows="5" onKeyDown="textCounter(this.form.obs,this.form.remLen,1024);" onKeyUp="textCounter(this.form.obs,this.form.remLen,1024);"></textarea>  
                              <ul class="list-h inner-separated pull-right">
-                                 <li>Restam 1024 caracteres</li>
-                                 <li>Caracteres: 0</li>
-                                 <li>Palavras: 0</li>
+                                 <li>Restam &nbsp;<input type=label name=remLen size=3 maxlength=3 value="1024"> caracteres</li>                                
                              </ul>
                          </div>
                         <span id="contadorJustificativa"></span>  
@@ -32,29 +42,7 @@
                             <tr> 
                                 <th> <br> 
                                     <input type="file" name="parquivo" id="parquivo" /> <br>
-                                    <input type="hidden" name="MAX_SIZE_FILE" value="100000" /> <br> <!-- evita que o usuario espere seu careegameento no servidor para saber que é válido-->
-                                <td align="right">
-                                        <?php
-                                        $data=date('d/m/Y');
-                                        $hora=date('H');
-                                        $minutos=date('i');
-                                        $segundos=date('s');
-
-                                        if($hora>=12 && $hora<18)
-                                        {
-                                        echo("Boa Tarde, hoje é $data - $hora:$minutos:$segundos");
-                                        }
-                                        if($hora>=18 && $hora<24)
-                                        {
-                                        echo("Boa Noite, hoje é $data - $hora:$minutos:$segundos");
-                                        }
-                                        if($hora>=24 && $hora<12)
-                                        {
-                                        echo("Bom Dia, hoje é $data - $hora:$minutos:$segundos");
-                                        }
-                                        ?>
-                                    
-                                </td>
+                                    <input type="hidden" name="MAX_SIZE_FILE" value="10000000" /> <br> <!-- evita que o usuario espere seu carregamento no servidor para saber que é válido-->
                                 </th> 
                             </tr> 
                         </thead> 
@@ -62,8 +50,8 @@
                 </fieldset>   
                 <div class="form-actions bottom">
                     <button id="cancel" type="button" class="btn left"><i class="icon-ban-circle"></i> Cancelar</button>
-                     <button id="salvar" type="button" class="btn primary" data-hasqtip="2"><i class="icon-save"></i> Salvar</button>
-                     <button id="Enviar" type="button" class="btn primary" data-hasqtip="2"><i class="icon-save"></i> Enviar</button>
+                    <button id="salvar" type="submit" class="btn primary" ><i class="icon-save"></i> Salvar</button>
+                    <button id="Enviar" type="publish" class="btn primary"><i class="icon-mail-forward"></i> Enviar</button>
                 </div>
             </form>
         </div>
