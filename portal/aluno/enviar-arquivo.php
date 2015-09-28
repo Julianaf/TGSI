@@ -22,19 +22,39 @@
                          </div>
                         <span id="contadorJustificativa"></span>  
                     </div>
-                </div>
-                              
+                </div>          
                 <fieldset class="bordered rounded shadowed margin-bottom"> 
                     <div class="row"> 
                         <div> Envie o arquivo no formato .pdf <br> 
-                            <strong>Tamanho arquivos:</strong> 10 Mb. <br> 
-                                
+                            <strong>Tamanho arquivos:</strong> 10 Mb. <br>                    
                     <table id="tableAnexos" class="table bordered rounded shadowed striped stroked narrow">
                         <thead class="header"> 
                             <tr> 
                                 <th> <br> 
                                     <input type="file" name="parquivo" id="parquivo" /> <br>
                                     <input type="hidden" name="MAX_SIZE_FILE" value="100000" /> <br> <!-- evita que o usuario espere seu careegameento no servidor para saber que é válido-->
+                                <td align="right">
+                                        <?php
+                                        $data=date('d/m/Y');
+                                        $hora=date('H');
+                                        $minutos=date('i');
+                                        $segundos=date('s');
+
+                                        if($hora>=12 && $hora<18)
+                                        {
+                                        echo("Boa Tarde, hoje é $data - $hora:$minutos:$segundos");
+                                        }
+                                        if($hora>=18 && $hora<24)
+                                        {
+                                        echo("Boa Noite, hoje é $data - $hora:$minutos:$segundos");
+                                        }
+                                        if($hora>=24 && $hora<12)
+                                        {
+                                        echo("Bom Dia, hoje é $data - $hora:$minutos:$segundos");
+                                        }
+                                        ?>
+                                    
+                                </td>
                                 </th> 
                             </tr> 
                         </thead> 
