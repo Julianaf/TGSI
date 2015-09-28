@@ -9,20 +9,20 @@
     <div class="band">
         <div class="container">
             <h2 class="primary stroked-bottom text-shadowed margin-bottom "> Envio de arquivo para orientador</h2>
-            <form name=fInsereArquivo" enctype="multipart/form-data" id="fInsereArquivo" action="recebe_arquivo.php" method="post" > <!--Monta formulário com campos do arquivo-->
+            <form name=insereArquivo" enctype="multipart/form-data" id="insereArquivo" action="recebe_arquivo.php" method="post" > <!--Monta formulário com campos do arquivo-->
                 <div class="row"> 
                     <div class="span12"> <span class="label">Observações</span><br>
                          <div class="row">
                              
                                  <SCRIPT LANGUAGE="JavaScript">
-                                <!-- 
+                               
                                 function textCounter(field, countfield, maxlimit) {
                                 if (field.value.length > maxlimit)
                                 field.value = field.value.substring(0, maxlimit);
                                 else 
                                 countfield.value = maxlimit - field.value.length;
                                 }
-                                // -->
+                             
                                 </script>                                                              
                            
                                 <textarea  name="obs" class="textarea" rows="5" onKeyDown="textCounter(this.form.obs,this.form.remLen,1024);" onKeyUp="textCounter(this.form.obs,this.form.remLen,1024);"></textarea>  
@@ -41,7 +41,7 @@
                         <thead class="header"> 
                             <tr> 
                                 <th> <br> 
-                                    <input type="file" name="parquivo" id="parquivo" /> <br>
+                                    <input type="file" name="arquivo" id="arquivo" /> <br>
                                     <input type="hidden" name="MAX_SIZE_FILE" value="10000000" /> <br> <!-- evita que o usuario espere seu carregamento no servidor para saber que é válido-->
                                 </th> 
                             </tr> 

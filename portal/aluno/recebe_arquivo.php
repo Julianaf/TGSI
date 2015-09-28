@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <?php
             // verifica se foi enviado um arquivo 
-            if(isset($_FILES['farquivo']['name']) && $_FILES["farquivo"]["error"] == 0)
+            if(isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0)
             {
 
                     echo "Você enviou o arquivo: <strong>" . $_FILES['arquivo']['name'] . "</strong><br />";
@@ -20,8 +20,8 @@ and open the template in the editor.
                     echo "Temporáriamente foi salvo em: <strong>" . $_FILES['arquivo']['tmp_name'] . "</strong><br />";
                     echo "Seu tamanho é: <strong>" . $_FILES['arquivo']['size'] . "</strong> Bytes<br /><br />";
 
-                    $arquivo_tmp = $_FILES['farquivo']['tmp_name'];
-                    $nome = $_FILES['farquivo']['name'];
+                    $arquivo_tmp = $_FILES['arquivo']['tmp_name'];
+                    $nome = $_FILES['arquivo']['name'];
 
 
                     // Pega a extensao
