@@ -40,7 +40,7 @@ and open the template in the editor.
                             $novoNome = md5(microtime()) . $extensao;
 
                             // Concatena a pasta com o nome
-                            $destino = 'imagens/' . $novoNome; 
+                            $destino = 'arquivos/' . $novoNome; 
 
                             // tenta mover o arquivo para o destino
                             if( @move_uploaded_file( $arquivo_tmp, $destino  ))
@@ -48,6 +48,7 @@ and open the template in the editor.
                                     echo "Arquivo salvo com sucesso em : <strong>" . $destino . "</strong><br />";
                                     echo "<img src=\"" . $destino . "\" />";
                             }
+                                 // pode ser colocado mas funções ex: UPLOAD_ERR_FORM_SIZE(se exece o tamanho) UPLOAD_ERR_PARTIAL(se oupload não foi completo) UPLOAD_ERR_NO_FILE (se nenhum arquivo foi encontrado)                                           
                             else
                                     echo "Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />";
                     }
