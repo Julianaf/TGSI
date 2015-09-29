@@ -30,10 +30,10 @@ and open the template in the editor.
                     // Converte a extensao para mimusculo
                     $extensao = strtolower($extensao);
 
-                    // Somente imagens, .jpg;.jpeg;.gif;.png
+                    // Somente arquivos, .pdf;
                     // Aqui eu enfilero as extesões permitidas e separo por ';'
-                    // Isso server apenas para eu poder pesquisar dentro desta String
-                    if(strstr('.jpg;.jpeg;.pdf;.png', $extensao))
+                    // Isso serve apenas para eu poder pesquisar dentro desta String
+                    if(strstr('.pdf', $extensao))
                     {
                             // Cria um nome único para esta imagem
                             // Evita que duplique as imagens no servidor.
@@ -52,7 +52,7 @@ and open the template in the editor.
                                     echo "Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />";
                     }
                     else
-                            echo "Você poderá enviar apenas arquivos \"*.jpg;*.jpeg;*.pdf;*.png\"<br />";
+                            echo "Você poderá enviar apenas arquivos \"*.pdf\"<br />";
             }
             else
             {
